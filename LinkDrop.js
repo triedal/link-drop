@@ -20,8 +20,8 @@ if (Meteor.isServer) {
 if (Meteor.isClient) {
   Template.body.events({
     "submit .email-sender-form": function(event) {
-      var email = event.target.email.value
-      var link = event.target.url.value
+      var email = event.target.email.value;
+      var link = event.target.url.value;
 
       Meteor.call('sendEmail',
             email,
