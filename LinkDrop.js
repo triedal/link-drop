@@ -1,23 +1,33 @@
-if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
+if (Meteor.isServer) {
+  Meteor.methods({
+    sendEmail: function (to, from, subject, text) {
+      check([to, from, subject, text], [String]);
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
+      // Let other method calls from the same client start running,
+      // without waiting for the email sending to complete.
+      this.unblock();
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
+      Email.send({
+        to: to,
+        from: from,
+        subject: subject,
+        text: text
+      });
     }
   });
 }
 
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
+if (Meteor.isClient) {
+  Template.body.events({
+    "submit .email-sender-form": function(event) {
+      var email = event.target.email.value
+      var link = event.target.url.value
+
+      Meteor.call('sendEmail',
+            email,
+            email,
+            'Link sent from Link Drop',
+            link);
+    }
   });
 }
