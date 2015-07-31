@@ -1,14 +1,11 @@
 <head>
-  <title>LinkDrop</title>
+  <title>Link Drop</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor! Testing</h1>
-
-  {{> hello}}
+  <form class="email-sender-form">
+  	<input type="email" name="email" placeholder="your@email.com">
+  	<input type="url" name="url" placeholder="Link to send">
+  	<input type="submit" value="Send Link!">
+  </form>
 </body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
