@@ -18,7 +18,6 @@ if (Meteor.isServer) {
 }
 
 if (Meteor.isClient) {
-  $("#sentConfirm").
   Template.body.events({
     "submit .email-sender-form": function(event) {
       event.preventDefault();
@@ -30,7 +29,7 @@ if (Meteor.isClient) {
             email,
             'Link Drop',
             link);
-      event.target.email.value = ""; /*makes input boxes empty after sending email*/
+      event.target.email.value = "";
       event.target.url.value = "";
 
     }
