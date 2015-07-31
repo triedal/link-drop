@@ -18,16 +18,21 @@ if (Meteor.isServer) {
 }
 
 if (Meteor.isClient) {
+  $("#sentConfirm").
   Template.body.events({
     "submit .email-sender-form": function(event) {
+      event.preventDefault();
       var email = event.target.email.value;
       var link = event.target.url.value;
 
       Meteor.call('sendEmail',
             email,
             email,
-            'Link sent from Link Drop',
+            'Link Drop',
             link);
+      event.target.email.value = ""; /*makes input boxes empty after sending email*/
+      event.target.url.value = "";
+
     }
   });
 }
