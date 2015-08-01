@@ -11,8 +11,8 @@
 	  	<input type="url" name="url" placeholder="link to send">
 	  	<input type="submit" value="Send Link!">
 	  </form>
-  </div>
-  <div>
-      <p id="sentConfirm">Message sent</p>
+	  {{#if messageSent}}
+	  <div id="status-message">Your link has been sent!</div>
+	  {{/if}}
   </div>
 </body>

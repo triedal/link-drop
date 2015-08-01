@@ -25,14 +25,16 @@ if (Meteor.isClient) {
       var email = event.target.email.value;
       var link = event.target.url.value;
 
-      Meteor.call('sendEmail',
-            email,
-            email,
-            'Link Drop',
-            link);
+      if (email && link) {
+        Meteor.call('sendEmail',
+          email,
+          email,
+          'Link Drop',
+          link);
 
-      event.target.email.value = ""; /*makes input boxes empty after sending email*/
-      event.target.url.value = "";
+        event.target.email.value = ""; /*makes input boxes empty after sending email*/
+        event.target.url.value = "";
+      } 
     }
   });
 }

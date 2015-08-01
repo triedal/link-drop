@@ -71,3 +71,9 @@ input[type="submit"]:active {
 	font-size: 25px;
 	margin: 15px auto -5px auto;
 }
+
+#status-message {
+	margin: 35px auto auto 25px;
+	color: #fff;
+	font-family: 'Oswald', sans-serif;
+}
