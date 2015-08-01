@@ -1,5 +1,73 @@
-/* CSS declarations go here */
+body {
+	background-color: #50C9C3;
+	background-image: linear-gradient(to bottom, #50C9C3, #96DEDA 100%);
+	background-attachment: fixed;
+}
+
+.container {
+	width: 400px;
+  height: 230px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -115px;
+  margin-left: -200px;
+  background: #fff;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+input {
+	display: block;
+	width: 350px;
+  height: 35px;
+  margin: 15px auto 15px auto;
+}
+
+input[type="url"], input[type="email"] {
+	box-sizing: border-box;
+	padding: 0px 0px 0px 10px;
+}
+ 
+input[type="submit"] {
+	position: relative;
+  vertical-align: top;
+  height: 40px;
+  padding: 0;
+  font-size: 18px;
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #3498db;
+  border: 0;
+  border-bottom: 2px solid #2a8bcc;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #2a8bcc;
+  box-shadow: inset 0 -2px #2a8bcc;
+  box-sizing: content-box;
+}
+
+input[type="submit"]:active {
+	top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 
 #sentConfirm {
-    visibility: hidden;
+   visibility: hidden;
+}
+
+#header {
+	display: block;
+	width: 350px;
+	color: #3498db;
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+	margin-left: 25px;
+	font-size: 25px;
+	margin: 15px auto -5px auto;
 }
