@@ -1,4 +1,3 @@
-
 if (Meteor.isServer) {
   Meteor.methods({
     sendEmail: function (to, from, subject, text) {
@@ -37,6 +36,12 @@ if (Meteor.isClient) {
         event.target.url.value = "";
       }
     },
+    "focus .emailTextBox": function(event) { //Both of these events will remove "status-message" when either text boxes
+      Session.set("sent", false);            //are clicked by making messageSent return false
+    },
+    "focus .urlTextBox": function(event) {
+      Session.set("sent", false);
+    }
   });
 
   Template.body.helpers({
