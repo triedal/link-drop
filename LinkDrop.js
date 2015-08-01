@@ -1,3 +1,4 @@
+
 if (Meteor.isServer) {
   Meteor.methods({
     sendEmail: function (to, from, subject, text) {
@@ -31,10 +32,18 @@ if (Meteor.isClient) {
           email,
           'Link Drop',
           link);
-
-        event.target.email.value = ""; /*makes input boxes empty after sending email*/
+        Session.set("sent", true); //used in messageSent helper to make it return true if email was sent.
+        event.target.email.value = ""; //makes input boxes empty after sending email
         event.target.url.value = "";
-      } 
-    }
+      }
+    },
   });
+
+  Template.body.helpers({
+    messageSent: function() {
+      if(Session.get("sent")) {
+        return true;
+      }
+    }
+  })
 }
