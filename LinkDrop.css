@@ -77,3 +77,9 @@ input[type="submit"]:active {
 	color: #fff;
 	font-family: 'Oswald', sans-serif;
 }
+
+#wait-message {
+  margin: 35px auto auto 25px;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+}

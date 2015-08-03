@@ -12,7 +12,11 @@
 	  	<input type="submit" value="Send Link!">
 	  </form>
 	  {{#if messageSent}}
-	  <div id="status-message">Your link has been sent!</div>
+	    <div id="status-message">Your link has been sent!</div>
 	  {{/if}}
-  </div>
+      {{#if cannotSendYet}}
+          <div id="wait-message">Please wait 10 seconds between sends.</div>
+      {{/if}}
+    </div>
 </body>
+
